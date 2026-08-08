@@ -1,25 +1,50 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
-import { profile } from '../config/portfolio'
+import { contactForm, profile } from '../config/portfolio'
 
 const initialForm = { name: '', email: '', message: '' }
 
 export default function Contact() {
   const [form, setForm] = useState(initialForm)
+  const [status, setStatus] = useState('idle')
 
   const handleChange = (e) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(
-      `Halo ${profile.name}, saya menemukan portofolio Anda`,
-    )
-    const body = encodeURIComponent(
-      `Nama: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
-    )
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
+    setStatus('sending')
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: contactForm.accessKey,
+          subject: `Pesan baru dari portofolio — ${form.name}`,
+          from_name: form.name,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          _honey: '',
+        }),
+      })
+
+      const data = await res.json()
+
+      if (data.success) {
+        setStatus('success')
+        setForm(initialForm)
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   const socials = [
@@ -130,15 +155,28 @@ export default function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex w-fit items-center gap-3 bg-accent px-7 py-3 font-mono text-sm font-medium text-ink"
+                disabled={status === 'sending'}
+                className="inline-flex w-fit items-center gap-3 bg-accent px-7 py-3 font-mono text-sm font-medium text-ink disabled:cursor-wait disabled:opacity-60"
                 data-cursor
               >
-                Kirim pesan →
+                {status === 'sending' ? 'Mengirim...' : 'Kirim pesan →'}
               </motion.button>
 
+              {status === 'success' && (
+                <p className="font-mono text-sm text-accent">
+                  ✓ Terima kasih! Pesanmu terkirim ke {profile.email}.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="font-mono text-sm text-red-400">
+                  ✗ Gagal mengirim. Coba lagi nanti, atau kirim langsung lewat
+                  email di samping.
+                </p>
+              )}
+
               <p className="font-mono text-xs text-ash">
-                <span className="text-accent">$</span> mode: mailto · tanpa
-                server, tanpa database
+                <span className="text-accent">$</span> terkirim langsung ke{' '}
+                {profile.email} via Web3Forms
               </p>
             </form>
           </Reveal>

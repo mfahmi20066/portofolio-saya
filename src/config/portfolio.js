@@ -23,6 +23,12 @@ export const profile = {
   },
 }
 
+export const contactForm = {
+  // Dapatkan access key GRATIS di https://web3forms.com
+  // (isi email penerima: mfahmi20066@gmail.com, konfirmasi, lalu salin kodenya)
+  accessKey: 'GANTI_DENGAN_ACCESS_KEY_MU',
+}
+
 export const nav = [
   { id: 'about', label: 'Tentang', index: '01' },
   { id: 'projects', label: 'Karya', index: '02' },
