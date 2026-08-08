@@ -42,8 +42,7 @@ export default function Contact() {
             Ada proyek? Mari ngobrol.
           </h2>
           <p className="mt-4 max-w-xl leading-relaxed text-ash">
-            Form di bawah akan membuka email client kamu. Balasan dijamin masuk,
-            bukan ke folder spam.
+            Langsung terhubung lewat email — tanpa server, tanpa antrean.
           </p>
         </Reveal>
 
