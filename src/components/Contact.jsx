@@ -29,7 +29,7 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="relative scroll-mt-24 py-24 md:py-32">
+    <section id="contact" className="relative scroll-mt-24 py-16 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <Reveal className="mb-12 md:mb-16">
           <div className="flex items-center gap-3 font-mono text-xs md:text-sm">
@@ -52,7 +52,7 @@ export default function Contact() {
             <a
               href={profile.socials.email}
               data-cursor
-              className="group inline-block font-display text-2xl font-medium text-paper md:text-4xl"
+              className="group inline-block break-all font-display text-xl font-medium text-paper md:text-4xl"
             >
               <span className="group-hover:text-accent">{profile.email}</span>
               <span className="mt-2 block h-px w-full origin-left scale-x-0 bg-accent transition-transform duration-500 group-hover:scale-x-100" />

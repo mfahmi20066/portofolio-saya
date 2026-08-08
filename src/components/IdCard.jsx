@@ -21,7 +21,7 @@ const QR = [
 
 function Barcode({ tall = false }) {
   return (
-    <div className={`flex items-stretch gap-[2px] ${tall ? 'h-12' : 'h-7'}`}>
+    <div className={`flex items-stretch gap-[2px] ${tall ? 'h-8 md:h-12' : 'h-5 md:h-7'}`}>
       {BARS.map((w, i) => (
         <span key={i} className="bg-paper/70" style={{ width: w }} />
       ))}
@@ -89,7 +89,7 @@ function Front() {
       <span className="absolute left-1/2 top-2.5 z-30 h-4 w-4 -translate-x-1/2 rounded-full bg-ink ring-2 ring-line" />
       <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-br from-transparent via-paper/[0.05] to-transparent" />
 
-      <div className="flex items-center justify-between border-b border-line px-5 py-3 font-mono text-[10px] uppercase tracking-widest text-ash">
+      <div className="flex items-center justify-between border-b border-line px-4 py-2.5 font-mono text-[10px] uppercase tracking-widest text-ash md:px-5 md:py-3">
         <span className="flex items-center gap-2 text-paper">
           <span className="flex h-4 w-4 items-center justify-center border border-accent text-[8px] text-accent">
             P
@@ -99,8 +99,8 @@ function Front() {
         <span className="text-accent">secure·01</span>
       </div>
 
-      <div className="flex flex-1 items-stretch gap-5 px-5 py-4">
-        <div className="relative w-24 shrink-0 overflow-hidden border border-line bg-ink md:w-28">
+      <div className="flex flex-1 items-stretch gap-3 px-4 py-3 md:gap-5 md:px-5 md:py-4">
+        <div className="relative w-16 shrink-0 overflow-hidden border border-line bg-ink md:w-28">
           <Avatar />
           <div className="animate-scan pointer-events-none absolute inset-x-0 h-10 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
           <div className="absolute bottom-1.5 left-1.5 flex items-center gap-1 font-mono text-[8px] text-accent">
@@ -111,17 +111,17 @@ function Front() {
 
         <div className="flex min-w-0 flex-col justify-between py-1">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-accent">
+            <p className="font-mono text-[9px] uppercase tracking-widest text-accent md:text-[10px]">
               nama
             </p>
-            <h3 className="mt-0.5 font-display text-lg font-semibold leading-tight text-paper md:text-2xl">
+            <h3 className="mt-0.5 font-display text-base font-semibold leading-tight text-paper md:text-2xl">
               {profile.name}
             </h3>
-            <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-ash">
+            <p className="mt-1 font-mono text-[9px] uppercase tracking-widest text-ash md:text-[10px]">
               {profile.role}
             </p>
           </div>
-          <div className="space-y-1 font-mono text-[11px] text-ash">
+          <div className="space-y-1 font-mono text-[10px] text-ash md:text-[11px]">
             <p className="flex justify-between gap-6">
               <span>id</span>
               <span className="text-paper">MF-2026-041</span>
@@ -134,7 +134,7 @@ function Front() {
         </div>
       </div>
 
-      <div className="border-t border-line px-5 py-3">
+      <div className="border-t border-line px-4 py-2.5 md:px-5 md:py-3">
         <div className="flex items-end justify-between gap-4">
           <Barcode />
           <span className="font-mono text-[9px] uppercase tracking-widest text-ash">
@@ -156,13 +156,13 @@ function Back() {
   return (
     <div className="absolute inset-0 flex flex-col overflow-hidden rounded-lg border border-line bg-surface [backface-visibility:hidden] [transform:rotateY(180deg)]">
       <span className="absolute left-1/2 top-2.5 z-30 h-4 w-4 -translate-x-1/2 rounded-full bg-ink ring-2 ring-line" />
-      <div className="flex items-center justify-between border-b border-line px-5 py-3 font-mono text-[10px] uppercase tracking-widest text-ash">
+      <div className="flex items-center justify-between border-b border-line px-4 py-2.5 font-mono text-[10px] uppercase tracking-widest text-ash md:px-5 md:py-3">
         <span className="text-paper">precision id</span>
         <span className="text-accent">valid until 12/2030</span>
       </div>
 
-      <div className="flex flex-1 gap-6 px-5 py-4">
-        <div className="grid h-fit grid-cols-7 gap-[3px] border border-line bg-ink p-2">
+      <div className="flex flex-1 gap-3 px-4 py-3 md:gap-6 md:px-5 md:py-4">
+        <div className="grid h-fit grid-cols-7 gap-[3px] border border-line bg-ink p-1.5 md:p-2">
           {QR.map((on, i) => (
             <span
               key={i}
@@ -171,7 +171,7 @@ function Back() {
           ))}
         </div>
 
-        <div className="flex min-w-0 flex-1 flex-col justify-between font-mono text-[11px]">
+        <div className="flex min-w-0 flex-1 flex-col justify-between font-mono text-[10px] md:text-[11px]">
           <div className="space-y-2">
             {rows.map((row) => (
               <p key={row.label} className="flex items-baseline justify-between gap-4">
@@ -188,7 +188,7 @@ function Back() {
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-t border-line px-5 py-3">
+      <div className="flex items-center justify-between border-t border-line px-4 py-2.5 md:px-5 md:py-3">
         <Barcode tall />
         <span className="font-mono text-xs text-paper/80">Muh. Fahmi</span>
       </div>
@@ -299,10 +299,10 @@ export default function IdCard() {
       </motion.div>
 
       <div className="mt-4 flex items-center justify-between font-mono text-[11px] text-ash">
-        <span>
+        <span className="hidden sm:block">
           <span className="text-accent">↖</span> gerakkan kursor
         </span>
-        <span>
+        <span className="mx-auto sm:mx-0">
           klik untuk balik <span className="text-accent">↻</span>
         </span>
       </div>

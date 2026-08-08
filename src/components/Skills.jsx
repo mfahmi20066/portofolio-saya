@@ -4,7 +4,7 @@ import { skillGroups } from '../config/portfolio'
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative scroll-mt-24 py-24 md:py-32">
+    <section id="skills" className="relative scroll-mt-24 py-16 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <SectionHeading
           index="03"

@@ -5,7 +5,7 @@ import { projects } from '../config/portfolio'
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative scroll-mt-24 py-24 md:py-32">
+    <section id="projects" className="relative scroll-mt-24 py-16 md:py-32">
       <div className="bg-grid absolute inset-0 opacity-40 [mask-image:radial-gradient(60%_50%_at_50%_0%,black,transparent)]" />
 
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
@@ -16,7 +16,7 @@ export default function Projects() {
           description="Dari sistem backend berthroughput tinggi hingga antarmuka yang terasa hidup — setiap proyek dikerjakan dengan standar yang sama: presisi."
         />
 
-        <div className="flex flex-col gap-20 md:gap-28">
+        <div className="flex flex-col gap-16 md:gap-28">
           {projects.map((project, i) => (
             <Reveal key={project.title} delay={0.05}>
               <article
@@ -39,11 +39,11 @@ export default function Projects() {
                 </div>
 
                 <div className="md:col-span-5">
-                  <div className="flex items-baseline justify-between font-mono text-xs text-ash">
-                    <span className="text-accent">
+                  <div className="flex items-baseline justify-between gap-3 font-mono text-xs text-ash">
+                    <span className="shrink-0 text-accent">
                       // 0{i + 1} — {project.year}
                     </span>
-                    <span className="uppercase tracking-widest">
+                    <span className="text-right leading-tight uppercase tracking-widest">
                       {project.subtitle}
                     </span>
                   </div>

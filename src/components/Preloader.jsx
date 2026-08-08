@@ -36,7 +36,7 @@ export default function Preloader() {
         <span className="text-accent">$</span> init --portfolio
       </div>
 
-      <div className="font-display text-4xl font-semibold tracking-tight text-paper md:text-6xl">
+      <div className="px-6 text-center font-display text-2xl font-semibold tracking-tight text-paper md:text-6xl">
         {name.slice(0, shown)}
         <span className="cursor-blink text-accent">_</span>
       </div>

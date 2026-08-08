@@ -49,7 +49,7 @@ export default function Hero({ ready }) {
           <span>[ fullstack_developer ]</span>
         </motion.div>
 
-        <h1 className="mt-4 font-display text-[clamp(3rem,11vw,9rem)] font-semibold leading-[0.95] tracking-tight">
+        <h1 className="mt-4 font-display text-[clamp(2.5rem,10.5vw,9rem)] font-semibold leading-[0.95] tracking-tight">
           <motion.span
             variants={item}
             className="block text-paper"
@@ -102,7 +102,7 @@ export default function Hero({ ready }) {
               <div className="font-display text-2xl font-semibold text-paper md:text-4xl">
                 {stat.value}
               </div>
-              <div className="mt-1 font-mono text-[11px] uppercase tracking-wider text-ash md:text-xs">
+              <div className="mt-1 font-mono text-[9px] uppercase tracking-wider text-ash md:text-xs">
                 {stat.label}
               </div>
             </div>
