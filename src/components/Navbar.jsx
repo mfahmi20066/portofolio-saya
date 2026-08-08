@@ -40,10 +40,11 @@ export default function Navbar() {
   const close = () => setOpen(false)
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled
-          ? 'border-b border-line bg-ink/80 backdrop-blur-md'
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+          scrolled
+            ? 'border-b border-line bg-ink/80 backdrop-blur-md'
           : 'border-b border-transparent bg-transparent'
       }`}
     >
@@ -99,18 +100,19 @@ export default function Navbar() {
           />
         </button>
       </nav>
+      </header>
 
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 top-16 z-40 bg-ink"
+            className="fixed inset-0 z-40 bg-ink md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
           >
             <div className="bg-grid absolute inset-0 opacity-60" />
-            <ul className="relative flex h-full flex-col justify-center gap-2 px-8">
+            <ul className="relative flex h-full flex-col justify-center gap-2 overflow-y-auto px-8 pb-24 pt-20">
               {nav.map((item, i) => (
                 <motion.li
                   key={item.id}
@@ -126,7 +128,7 @@ export default function Navbar() {
                     <span className="font-mono text-sm text-accent">
                       {item.index}
                     </span>
-                    <span className="font-display text-4xl font-semibold text-paper">
+                    <span className="font-display text-3xl font-semibold text-paper sm:text-4xl">
                       {item.label}
                     </span>
                   </a>
@@ -136,6 +138,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   )
 }
