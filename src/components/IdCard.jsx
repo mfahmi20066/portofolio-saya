@@ -73,7 +73,7 @@ function Avatar() {
 
       {!photoError && (
         <img
-          src="/foto-saya.jpeg"
+          src={`${import.meta.env.BASE_URL}foto-saya.jpeg`}
           alt="Foto profil"
           className="absolute inset-0 h-full w-full object-cover"
           onError={() => setPhotoError(true)}
