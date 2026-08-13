@@ -1,6 +1,23 @@
+import { motion } from 'framer-motion'
 import Reveal from './Reveal'
+import CountUp from './CountUp'
 import SectionHeading from './SectionHeading'
 import { skillGroups } from '../config/portfolio'
+
+const list = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.05 } },
+}
+
+const chip = {
+  hidden: { opacity: 0, scale: 0.8, y: 12 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+  },
+}
 
 export default function Skills() {
   return (
@@ -13,10 +30,16 @@ export default function Skills() {
           description="Kemampuan yang dirawat terus-menerus — bukan sekadar daftar buzzword."
         />
 
-        <div className="grid gap-10 md:grid-cols-3 md:gap-6">
+        <div className="grid gap-10 md:grid-cols-3 md:gap-6" style={{ perspective: 1000 }}>
           {skillGroups.map((group, i) => (
             <Reveal key={group.title} delay={i * 0.08}>
-              <div className="h-full border border-line bg-surface p-7 transition-colors duration-300 hover:border-accent/40">
+              <motion.div
+                initial={{ opacity: 0, y: 40, rotateX: 14 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                className="h-full border border-line bg-surface p-7 transition-colors duration-300 hover:border-accent/40"
+              >
                 <div className="flex items-center justify-between font-mono text-sm">
                   <span className="flex items-center gap-2 text-accent">
                     <span>&gt;</span>
@@ -25,23 +48,31 @@ export default function Skills() {
                     </span>
                   </span>
                   <span className="text-ash">
-                    {String(group.items.length).padStart(2, '0')}
+                    <CountUp to={group.items.length} pad={2} play />
                   </span>
                 </div>
 
-                <ul className="mt-6 flex flex-wrap gap-2">
+                <motion.ul
+                  variants={list}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, amount: 0.3 }}
+                  className="mt-6 flex flex-wrap gap-2"
+                >
                   {group.items.map((skill) => (
-                    <li key={skill}>
-                      <span
+                    <motion.li key={skill} variants={chip}>
+                      <motion.span
                         data-cursor
-                        className="block border border-line px-3 py-1.5 font-mono text-xs text-paper/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/60 hover:text-accent"
+                        whileHover={{ y: -4, scale: 1.06 }}
+                        transition={{ type: 'spring', stiffness: 320, damping: 18 }}
+                        className="block border border-line px-3 py-1.5 font-mono text-xs text-paper/80 transition-colors duration-300 hover:border-accent/60 hover:text-accent"
                       >
                         {skill}
-                      </span>
-                    </li>
+                      </motion.span>
+                    </motion.li>
                   ))}
-                </ul>
-              </div>
+                </motion.ul>
+              </motion.div>
             </Reveal>
           ))}
         </div>

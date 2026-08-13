@@ -1,11 +1,23 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from 'framer-motion'
 import { nav, profile } from '../config/portfolio'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState('')
+  const [hidden, setHidden] = useState(false)
+
+  const { scrollY } = useScroll()
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    const prev = scrollY.getPrevious() ?? 0
+    setHidden(prev < latest && latest > 140)
+  })
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -41,13 +53,15 @@ export default function Navbar() {
 
   return (
     <>
-      <header
+      <motion.header
+        animate={{ y: hidden && !open ? '-100%' : '0%' }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
           scrolled
             ? 'border-b border-line bg-ink/80 backdrop-blur-md'
-          : 'border-b border-transparent bg-transparent'
+            : 'border-b border-transparent bg-transparent'
       }`}
-    >
+      >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:h-20 md:px-10">
         <a
           href="#home"
@@ -100,7 +114,7 @@ export default function Navbar() {
           />
         </button>
       </nav>
-      </header>
+      </motion.header>
 
       <AnimatePresence>
         {open && (

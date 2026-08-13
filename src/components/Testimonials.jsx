@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import { testimonials } from '../config/portfolio'
@@ -12,14 +13,25 @@ export default function Testimonials() {
           title="Kata mereka yang pernah bekerja sama."
         />
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3" style={{ perspective: 1200 }}>
           {testimonials.map((testimonial, i) => (
             <Reveal key={testimonial.name} delay={i * 0.08}>
-              <figure className="flex h-full flex-col justify-between border border-line bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40">
+              <motion.figure
+                initial={{ opacity: 0, y: 48, rotateX: 16 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -6 }}
+                className="flex h-full flex-col justify-between border border-line bg-surface p-7 transition-colors duration-300 hover:border-accent/40"
+              >
                 <div>
-                  <span className="font-display text-4xl leading-none text-accent">
+                  <motion.span
+                    whileHover={{ rotate: -8, scale: 1.1 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    className="block w-fit font-display text-4xl leading-none text-accent"
+                  >
                     “
-                  </span>
+                  </motion.span>
                   <blockquote className="mt-3 leading-relaxed text-paper/85">
                     {testimonial.quote}
                   </blockquote>
@@ -38,9 +50,9 @@ export default function Testimonials() {
                     <span className="block font-mono text-xs text-ash">
                       {testimonial.role}
                     </span>
-                  </span>
-                </figcaption>
-              </figure>
+                    </span>
+                  </figcaption>
+              </motion.figure>
             </Reveal>
           ))}
         </div>

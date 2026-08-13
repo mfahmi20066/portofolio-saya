@@ -1,7 +1,54 @@
+import { useRef } from 'react'
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion'
 import ProjectThumb from './ProjectThumb'
-import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import { projects } from '../config/portfolio'
+
+const listContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.14 } },
+}
+
+const listItem = {
+  hidden: { opacity: 0, y: 64, scale: 0.97 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+  },
+}
+
+function ProjectImage({ seed, index }) {
+  const ref = useRef(null)
+  const reduce = useReducedMotion()
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  })
+  const y = useSpring(useTransform(scrollYProgress, [0, 1], [-36, 36]), {
+    stiffness: 90,
+    damping: 26,
+  })
+
+  return (
+    <div ref={ref} className="overflow-hidden">
+      <motion.div
+        style={reduce ? undefined : { y }}
+        whileHover={{ scale: 1.15 }}
+        transition={{ type: 'spring', stiffness: 180, damping: 22 }}
+        className="scale-[1.12]"
+      >
+        <ProjectThumb
+          seed={seed}
+          index={String(index).padStart(2, '0')}
+          className="w-full"
+        />
+      </motion.div>
+    </div>
+  )
+}
 
 export default function Projects() {
   return (
@@ -16,9 +63,15 @@ export default function Projects() {
           description="Dari sistem backend berthroughput tinggi hingga antarmuka yang terasa hidup — setiap proyek dikerjakan dengan standar yang sama: presisi."
         />
 
-        <div className="flex flex-col gap-16 md:gap-28">
+        <motion.div
+          variants={listContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+          className="flex flex-col gap-16 md:gap-28"
+        >
           {projects.map((project, i) => (
-            <Reveal key={project.title} delay={0.05}>
+            <motion.div key={project.title} variants={listItem}>
               <article
                 className={`group grid items-center gap-8 md:grid-cols-12 md:gap-12 ${
                   i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''
@@ -26,15 +79,18 @@ export default function Projects() {
               >
                 <div className="md:col-span-7">
                   <a
-                    href={project.link}
-                    className="block overflow-hidden border border-line bg-surface transition-colors duration-500 hover:border-accent/50"
+                    href={project.code}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group/th relative block overflow-hidden border border-line bg-surface transition-colors duration-500 hover:border-accent/50"
                     data-cursor
                   >
-                    <ProjectThumb
-                      seed={i + 1}
-                      index={String(i + 1).padStart(2, '0')}
-                      className="w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                    />
+                    <ProjectImage seed={i + 1} index={i + 1} />
+                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-ink/60 opacity-0 backdrop-blur-[2px] transition-opacity duration-500 group-hover/th:opacity-100">
+                      <span className="translate-y-3 border border-accent/60 bg-ink/80 px-4 py-2 font-mono text-sm text-accent transition-transform duration-500 group-hover/th:translate-y-0">
+                        buka proyek ↗
+                      </span>
+                    </div>
                   </a>
                 </div>
 
@@ -68,16 +124,18 @@ export default function Projects() {
                   </ul>
 
                   <div className="mt-7 flex items-center gap-5 font-mono text-sm">
-                    <a
-                      href={project.link}
+                    <motion.a
+                      href={project.code}
+                      target="_blank"
+                      rel="noreferrer"
+                      whileHover={{ x: 4 }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 18 }}
                       className="inline-flex items-center gap-2 text-accent transition-opacity hover:opacity-70"
                       data-cursor
                     >
                       Kunjungi
-                      <span className="transition-transform duration-300 group-hover:translate-x-1">
-                        ↗
-                      </span>
-                    </a>
+                      <span>↗</span>
+                    </motion.a>
                     <a
                       href={project.code}
                       className="inline-flex items-center gap-2 text-ash transition-colors hover:text-paper"
@@ -88,9 +146,9 @@ export default function Projects() {
                   </div>
                 </div>
               </article>
-            </Reveal>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
