@@ -71,13 +71,23 @@ export const projects = [
   },
   {
     title: 'Siakad',
-    subtitle: 'Backend Track & Trace',
+    subtitle: 'Sistem Informasi Akademik',
     description:
-      'Sistem informasi akademik untuk pengelolaan data sekolah secara terpusat. Input nilai rapor digital, jadwal pelajaran otomatis, dan akses orang tua untuk memantau perkembangan siswa — dibangun untuk mengelola ribuan data siswa lintas jurusan dan angkatan tanpa duplikasi data.',
+      'Platform sistem informasi akademik terpusat untuk digitalisasi manajemen data sekolah. Mencakup pencatatan nilai rapor digital, penjadwalan pelajaran otomatis, serta portal akses orang tua guna memantau progres siswa secara transparent. Dirancang menangani ribuan data siswa lintas jurusan dan angkatan dengan integritas data terjamin tanpa duplikasi.',
     tags: ['PHP', 'Laravel', 'MySQL', 'Redis'],
     year: '2026',
     link: '#',
-    code: 'https://github.com/',
+    code: 'https://github.com/mfahmi20066/siakad',
+  },
+  {
+    title: 'AbsensiDigital',
+    subtitle: 'Sistem Absensi Digital SPPG',
+    description:
+      'Sistem absensi digital untuk Satuan Pelayanan Pemenuhan Gizi (SPPG) Kota Palopo. Absensi lewat barcode/QR unik per karyawan, verifikasi foto wajah via kamera, dan pelacakan lokasi wajib dalam radius kantor — lengkap dengan 3 role (admin, manajer, karyawan), pengajuan izin berjenjang, penentuan status otomatis (hadir/telat/izin/cuti/alpha), serta laporan harian, bulanan, dan tahunan yang bisa diekspor ke CSV.',
+    tags: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'Vite', 'QR Code'],
+    year: '2026',
+    link: '#',
+    code: 'https://github.com/mfahmi20066/absensi_digital',
   },
 ]
 
@@ -99,25 +109,25 @@ export const skillGroups = [
 export const testimonials = [
   {
     quote:
-      'Waktu penyelesaian pengaduan warga turun drastis sejak sistemnya berjalan. Alur eskalasinya jelas, tidak ada lagi tiket yang menggantung tanpa penanggung jawab.',
+      'Sejak sistem berjalan, durasi penyelesaian pengaduan warga turun drastis. Alur eskalasinya jelas, jadi tak ada lagi tiket yang terbengkalai tanpa penanggung jawab.',
     name: 'Muhammad Fiqih',
     role: 'Client',
   },
   {
     quote:
-      'Selisih stok yang dulu jadi masalah rutin sekarang nyaris nol. Laporan pergerakan barang real-time bikin audit jadi jauh lebih cepat.',
+      'Selisih stok yang dulu jadi masalah rutin kini praktis hilang. Laporan pergerakan barang secara real-time membuat proses audit jauh lebih cepat.',
     name: 'Renal Rais',
     role: 'Client',
   },
   {
     quote:
-      'Dulu saya harus telepon wali kelas cuma untuk tahu anak masuk sekolah atau tidak. Sekarang tinggal buka aplikasi, nilai dan absensi anak bisa dipantau kapan saja tanpa perlu menunggu laporan manual.',
+      'Dulu orang tua harus menghubungi wali kelas hanya untuk mengecek kehadiran anak. Sekarang, lewat aplikasi, nilai dan absensi langsung bisa dipantau kapan saja secara transparan, tanpa menunggu laporan manual yang sering tertunda.',
     name: 'Tedy Fahrezy',
     role: 'Client',
   },
   {
     quote:
-      'Rekap kehadiran karyawan yang dulu manual dan rawan selisih sekarang otomatis dan akurat. Laporan jam kerja langsung tersedia real-time, memudahkan proses payroll setiap bulan.',
+      'Rekap kehadiran karyawan yang dulu manual dan rawan selisih sekarang otomatis dan akurat. Laporan jam kerja tersedia real-time, sehingga proses payroll setiap bulan jauh lebih lancar.',
     name: 'Yodi Yoinoxel',
     role: 'Client',
   },
