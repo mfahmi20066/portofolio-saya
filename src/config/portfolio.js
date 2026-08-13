@@ -1,13 +1,13 @@
 export const profile = {
   name: 'Muhammad Fahmi',
   firstName: 'Fahmi',
-  role: 'Fullstack Developer',
+  role: 'Developer',
   location: 'Palopo, Indonesia',
   email: 'mfahmi20066@gmail.com',
   tagline:
     'Membangun produk web yang presisi — dari database hingga piksel terakhir.',
   bio: [
-    'Fullstack developer dengan fokus pada arsitektur yang rapi, API yang stabil, dan antarmuka yang terasa hidup. Saya percaya produk hebat lahir dari detail kecil yang dikerjakan dengan teliti.',
+    'Developer dengan fokus pada arsitektur yang rapi, API yang stabil, dan antarmuka yang terasa hidup. Saya percaya produk hebat lahir dari detail kecil yang dikerjakan dengan teliti.',
     'Selama bertahun-tahun saya membantu startup dan tim produk merancang sistem yang bisa tumbuh tanpa menjadi rumit — dari skema database hingga pengalaman pengguna yang mulus.',
   ],
   stats: [
@@ -61,7 +61,7 @@ export const projects = [
   },
   {
     title: 'SistemInventori',
-    subtitle: 'Sistem Inventory Barang Pada Hnd Komputer',
+    subtitle: 'Sistem Inventory Barang',
     description:
       'Sistem manajemen inventory untuk kontrol stok multi-gudang secara akurat. Pemindaian barcode/QR, notifikasi stok menipis otomatis, dan laporan pergerakan barang real-time — dibangun untuk sinkronisasi ribuan SKU lintas lokasi tanpa selisih data.',
     tags: ['Laravel','PHP', 'Node.js', 'MySQL', 'Redis', 'Socket.IO'],
@@ -81,7 +81,7 @@ export const projects = [
   },
   {
     title: 'AbsensiDigital',
-    subtitle: 'Sistem Absensi Digital SPPG',
+    subtitle: 'Sistem Absensi Digital',
     description:
       'Sistem absensi digital untuk Satuan Pelayanan Pemenuhan Gizi (SPPG) Kota Palopo. Absensi lewat barcode/QR unik per karyawan, verifikasi foto wajah via kamera, dan pelacakan lokasi wajib dalam radius kantor — lengkap dengan 3 role (admin, manajer, karyawan), pengajuan izin berjenjang, penentuan status otomatis (hadir/telat/izin/cuti/alpha), serta laporan harian, bulanan, dan tahunan yang bisa diekspor ke CSV.',
     tags: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'Vite', 'QR Code'],

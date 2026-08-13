@@ -46,7 +46,7 @@ export default function Hero({ ready }) {
 
         <motion.div variants={item} className="mt-10 flex items-center gap-2 font-mono text-xs text-accent md:mt-14">
           <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-          <span>[ fullstack_developer ]</span>
+          <span>[ developer ]</span>
         </motion.div>
 
         <h1 className="mt-4 font-display text-[clamp(2.5rem,10.5vw,9rem)] font-semibold leading-[0.95] tracking-tight">
