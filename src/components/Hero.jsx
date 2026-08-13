@@ -37,7 +37,7 @@ export default function Hero({ ready }) {
             <span className="text-accent">$</span> whoami
           </motion.span>
           <motion.span variants={item} className="hidden md:inline">
-            est. 2019 · {profile.location}
+            est. 2026 · {profile.location}
           </motion.span>
           <motion.span variants={item} className="md:hidden">
             {profile.location}

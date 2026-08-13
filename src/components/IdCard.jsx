@@ -9,6 +9,8 @@ import { profile } from '../config/portfolio'
 
 const BARS = [2, 1, 3, 1, 2, 4, 1, 2, 2, 1, 3, 1, 1, 4, 2, 1, 3, 2, 1, 1, 2, 3, 1, 2, 4, 1, 2, 1, 1, 3, 2, 2, 1, 4]
 
+const currentYear = new Date().getFullYear()
+
 const QR = [
   1, 0, 1, 0, 1, 0, 1,
   0, 1, 0, 1, 1, 0, 0,
@@ -67,7 +69,7 @@ function Avatar() {
         ID-PHOTO
       </text>
       <text x="12" y="248" fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="#8B8B8E">
-        SECURE © 2026
+        SECURE © {currentYear}
       </text>
       </svg>
 
@@ -124,7 +126,7 @@ function Front() {
           <div className="space-y-1 font-mono text-[10px] text-ash md:text-[11px]">
             <p className="flex justify-between gap-6">
               <span>id</span>
-              <span className="text-paper">MF-2026-041</span>
+              <span className="text-paper">MF-{currentYear}-022</span>
             </p>
             <p className="flex justify-between gap-6">
               <span>dept</span>
@@ -138,7 +140,7 @@ function Front() {
         <div className="flex items-end justify-between gap-4">
           <Barcode />
           <span className="font-mono text-[9px] uppercase tracking-widest text-ash">
-            m f · 2026
+            m f · {currentYear}
           </span>
         </div>
       </div>

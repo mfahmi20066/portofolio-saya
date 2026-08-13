@@ -101,18 +101,24 @@ export const testimonials = [
     quote:
       'Waktu penyelesaian pengaduan warga turun drastis sejak sistemnya berjalan. Alur eskalasinya jelas, tidak ada lagi tiket yang menggantung tanpa penanggung jawab.',
     name: 'Muhammad Fiqih',
-    role: 'Kepala Layanan Publik @ SistemPengaduan',
+    role: 'Client',
   },
   {
     quote:
       'Selisih stok yang dulu jadi masalah rutin sekarang nyaris nol. Laporan pergerakan barang real-time bikin audit jadi jauh lebih cepat.',
     name: 'Renal Rais',
-    role: 'Manajer Gudang @ SistemInventory',
+    role: 'Client',
   },
   {
     quote:
-      'Orang tua siswa kini bisa pantau nilai dan absensi langsung dari aplikasi. Beban administrasi guru pun berkurang signifikan sejak sistemnya digunakan.',
+      'Dulu saya harus telepon wali kelas cuma untuk tahu anak masuk sekolah atau tidak. Sekarang tinggal buka aplikasi, nilai dan absensi anak bisa dipantau kapan saja tanpa perlu menunggu laporan manual.',
     name: 'Tedy Fahrezy',
-    role: 'Wakil Kepala Sekolah @ SIAKAD Sekolah',
+    role: 'Client',
+  },
+  {
+    quote:
+      'Rekap kehadiran karyawan yang dulu manual dan rawan selisih sekarang otomatis dan akurat. Laporan jam kerja langsung tersedia real-time, memudahkan proses payroll setiap bulan.',
+    name: 'Yodi Yoinoxel',
+    role: 'Client',
   },
 ]
