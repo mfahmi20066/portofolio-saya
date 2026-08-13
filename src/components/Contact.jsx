@@ -49,7 +49,7 @@ export default function Contact() {
 
   const socials = [
     { label: 'GitHub', url: profile.socials.github },
-    { label: 'LinkedIn', url: profile.socials.linkedin },
+    { label: 'WhatsApp', url: profile.socials.whatsapp },
     { label: 'Instagram', url: profile.socials.instagram },
   ]
 

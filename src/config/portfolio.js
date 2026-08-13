@@ -17,7 +17,7 @@ export const profile = {
   ],
   socials: {
     github: 'https://github.com/mfahmi20066',
-    linkedin: 'https://www.linkedin.com/in/',
+    whatsapp: 'https://wa.me/6285143948312',
     instagram: 'https://www.instagram.com/mfahmiii_22',
     email: 'mailto:mfahmi20066@gmail.com',
   },
