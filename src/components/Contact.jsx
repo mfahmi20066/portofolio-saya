@@ -176,7 +176,7 @@ export default function Contact() {
 
               <p className="font-mono text-xs text-ash">
                 <span className="text-accent">$</span> terkirim langsung ke{' '}
-                {profile.email} via Web3Forms
+                {profile.email} — tanpa server, tanpa antrean. 
               </p>
             </form>
           </Reveal>
