@@ -160,7 +160,7 @@ function Back() {
       <span className="absolute left-1/2 top-2.5 z-30 h-4 w-4 -translate-x-1/2 rounded-full bg-ink ring-2 ring-line" />
       <div className="flex items-center justify-between border-b border-line px-4 py-2.5 font-mono text-[10px] uppercase tracking-widest text-ash md:px-5 md:py-3">
         <span className="text-paper">precision id</span>
-        <span className="text-accent">valid until 12/2030</span>
+        <span className="text-accent">m fahmi - 22</span>
       </div>
 
       <div className="flex flex-1 gap-3 px-4 py-3 md:gap-6 md:px-5 md:py-4">
@@ -286,7 +286,7 @@ export default function IdCard() {
             className="aspect-[1.586] w-full cursor-pointer select-none [transform-style:preserve-3d]"
             data-cursor
             role="button"
-            aria-label="Lanyard ID card — klik untuk membalik"
+            aria-label="Lanyard ID card"
           >
             <motion.div
               className="relative h-full w-full [transform-style:preserve-3d]"
