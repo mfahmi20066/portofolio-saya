@@ -10,7 +10,7 @@ export default function Testimonials() {
         <SectionHeading
           index="04"
           kicker="Testimoni"
-          title="Kata mereka yang pernah bekerja sama."
+          title="Apa kata orang-orang yang pernah bekerja sama dengan saya."
         />
 
         <div className="grid gap-6 md:grid-cols-3" style={{ perspective: 1200 }}>

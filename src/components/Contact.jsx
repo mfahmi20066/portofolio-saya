@@ -89,7 +89,7 @@ export default function Contact() {
             <span className="h-px flex-1 bg-line" />
           </div>
           <h2 className="mt-6 font-display text-3xl font-semibold tracking-tight text-paper md:text-5xl">
-            Ada proyek? Mari ngobrol.
+            Punya proyek? Mari kita diskusikan.
           </h2>
           <p className="mt-4 max-w-xl leading-relaxed text-ash">
             Langsung terhubung lewat email — tanpa server, tanpa antrean.
@@ -221,7 +221,7 @@ export default function Contact() {
 
                 <p className="font-mono text-xs text-ash">
                   <span className="text-accent">$</span> terkirim langsung ke{' '}
-                  {profile.email} — tanpa server, tanpa antrean. 
+                  {profile.email}, tanpa perantara apa pun.
                 </p>
               </motion.div>
             </motion.form>

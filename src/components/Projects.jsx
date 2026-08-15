@@ -60,7 +60,7 @@ export default function Projects() {
           index="02"
           kicker="Karya"
           title="Proyek yang pernah saya kerjakan."
-          description="Dari sistem backend berthroughput tinggi hingga antarmuka yang terasa hidup — setiap proyek dikerjakan dengan standar yang sama: presisi."
+          description="Baik itu backend dengan beban tinggi maupun antarmuka yang terasa hidup, setiap proyek saya kerjakan dengan satu standar: presisi."
         />
 
         <motion.div

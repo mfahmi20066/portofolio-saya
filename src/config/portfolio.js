@@ -5,10 +5,10 @@ export const profile = {
   location: 'Palopo, Indonesia',
   email: 'mfahmi20066@gmail.com',
   tagline:
-    'Membangun produk web yang presisi — dari database hingga piksel terakhir.',
+    'Membangun produk web dengan presisi, mulai dari database hingga piksel terakhirnya.',
   bio: [
-    'Developer dengan fokus pada arsitektur yang rapi, API yang stabil, dan antarmuka yang terasa hidup. Saya percaya produk hebat lahir dari detail kecil yang dikerjakan dengan teliti.',
-    'Selama bertahun-tahun saya membantu startup dan tim produk merancang sistem yang bisa tumbuh tanpa menjadi rumit — dari skema database hingga pengalaman pengguna yang mulus.',
+    'Saya seorang developer yang senang merancang arsitektur yang bersih, API yang stabil, dan antarmuka yang nyaman dipakai. Menurut saya, produk yang baik selalu berawal dari detail-detail kecil yang dikerjakan dengan sungguh-sungguh.',
+    'Pengalaman bertahun-tahun membantu startup dan tim produk mengajari saya bagaimana merancang sistem yang bisa tumbuh tanpa berbelit-belit — mulai dari skema database hingga pengalaman pengguna yang mulus.',
   ],
   stats: [
     { value: '4+', label: 'tahun pengalaman' },

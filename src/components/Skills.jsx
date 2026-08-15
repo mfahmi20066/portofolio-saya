@@ -27,7 +27,7 @@ export default function Skills() {
           index="03"
           kicker="Skill"
           title="Alat yang saya kuasai."
-          description="Kemampuan yang dirawat terus-menerus — bukan sekadar daftar buzzword."
+          description="Kemampuan yang terus saya rawat dan kembangkan, bukan sekadar daftar nama teknologi."
         />
 
         <div className="grid gap-10 md:grid-cols-3 md:gap-6" style={{ perspective: 1000 }}>
@@ -83,7 +83,7 @@ export default function Skills() {
               <span className="text-accent">$</span> sedang dipelajari:
             </span>
             <span className="text-paper/80">
-              WebAssembly · Edge Computing · Real-time Collaboration
+              Flutter · Dart · React Native · Kotlin · Swift · Jetpack Compose
             </span>
           </div>
         </Reveal>
