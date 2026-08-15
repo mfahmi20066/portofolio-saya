@@ -106,6 +106,18 @@ export const skillGroups = [
   },
 ]
 
+export const toolkits = [
+  { name: 'Flutter', url: 'https://flutter.dev' },
+  { name: 'Dart', url: 'https://dart.dev' },
+  { name: 'React Native', url: 'https://reactnative.dev' },
+  { name: 'Kotlin', url: 'https://kotlinlang.org' },
+  { name: 'Swift', url: 'https://www.swift.org' },
+  {
+    name: 'Jetpack Compose',
+    url: 'https://developer.android.com/jetpack/compose',
+  },
+]
+
 export const testimonials = [
   {
     quote:

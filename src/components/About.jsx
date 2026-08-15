@@ -1,7 +1,11 @@
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import IdCard from './IdCard'
-import { profile } from '../config/portfolio'
+import { profile, toolkits } from '../config/portfolio'
+
+const eksperimenToolkits = toolkits.filter((t) =>
+  ['Flutter', 'React Native', 'Kotlin', 'Swift'].includes(t.name),
+)
 
 export default function About() {
   return (
@@ -42,7 +46,22 @@ export default function About() {
                 <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3.5">
                   <span className="text-accent">$</span>
                   <span className="flex-1 text-ash">eksperimen</span>
-                  <span className="text-paper">Flutter · React Native · Kotlin · Swift</span>
+                  <span className="text-paper">
+                    {eksperimenToolkits.map((toolkit, i) => (
+                      <span key={toolkit.name}>
+                        {i > 0 && <span className="text-ash"> · </span>}
+                        <a
+                          href={toolkit.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-cursor
+                          className="transition-colors duration-300 hover:text-accent"
+                        >
+                          {toolkit.name}
+                        </a>
+                      </span>
+                    ))}
+                  </span>
                 </li>
                 <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3.5">
                   <span className="text-accent">$</span>

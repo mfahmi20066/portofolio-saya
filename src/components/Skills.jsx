@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import CountUp from './CountUp'
 import SectionHeading from './SectionHeading'
-import { skillGroups } from '../config/portfolio'
+import { skillGroups, toolkits } from '../config/portfolio'
 
 const list = {
   hidden: {},
@@ -83,7 +83,20 @@ export default function Skills() {
               <span className="text-accent">$</span> sedang dipelajari:
             </span>
             <span className="text-paper/80">
-              Flutter · Dart · React Native · Kotlin · Swift · Jetpack Compose
+              {toolkits.map((toolkit, i) => (
+                <span key={toolkit.name}>
+                  {i > 0 && <span className="text-ash"> · </span>}
+                  <a
+                    href={toolkit.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-cursor
+                    className="transition-colors duration-300 hover:text-accent"
+                  >
+                    {toolkit.name}
+                  </a>
+                </span>
+              ))}
             </span>
           </div>
         </Reveal>
