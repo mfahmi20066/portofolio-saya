@@ -42,7 +42,7 @@ export default function About() {
                 <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3.5">
                   <span className="text-accent">$</span>
                   <span className="flex-1 text-ash">eksperimen</span>
-                  <span className="text-paper">Rust · Serverless · 3D Web</span>
+                  <span className="text-paper">Flutter · React Native · Kotlin · Swift</span>
                 </li>
                 <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3.5">
                   <span className="text-accent">$</span>
