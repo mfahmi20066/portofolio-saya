@@ -124,23 +124,27 @@ export const testimonials = [
       'Sejak sistem berjalan, durasi penyelesaian pengaduan warga turun drastis. Alur eskalasinya jelas, jadi tak ada lagi tiket yang terbengkalai tanpa penanggung jawab.',
     name: 'Muhammad Fiqih',
     role: 'Client',
+    instagram: 'https://instagram.com/kiyyopn_',
   },
   {
     quote:
       'Selisih stok yang dulu jadi masalah rutin kini praktis hilang. Laporan pergerakan barang secara real-time membuat proses audit jauh lebih cepat.',
     name: 'Renal Rais',
     role: 'Client',
+    instagram: 'https://instagram.com/reennaallllll',
   },
   {
     quote:
       'Dulu orang tua harus menghubungi wali kelas hanya untuk mengecek kehadiran anak. Sekarang, lewat aplikasi, nilai dan absensi langsung bisa dipantau kapan saja secara transparan, tanpa menunggu laporan manual yang sering tertunda.',
     name: 'Tedy Fahrezy',
     role: 'Client',
+    instagram: 'https://instagram.com/tedyfh_',
   },
   {
     quote:
       'Rekap kehadiran karyawan yang dulu manual dan rawan selisih sekarang otomatis dan akurat. Laporan jam kerja tersedia real-time, sehingga proses payroll setiap bulan jauh lebih lancar.',
     name: 'Yodi Yoinoxel',
     role: 'Client',
+    instagram: 'https://instagram.com/yodiynxl11',
   },
 ]
